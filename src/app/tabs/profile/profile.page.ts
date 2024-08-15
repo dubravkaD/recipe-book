@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ModalController} from "@ionic/angular";
 import {RecipeModalComponent} from "./recipe-modal/recipe-modal.component";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-profile',
@@ -9,7 +10,7 @@ import {RecipeModalComponent} from "./recipe-modal/recipe-modal.component";
 })
 export class ProfilePage implements OnInit {
 
-  constructor(private modalController:ModalController) { }
+  constructor(private modalController:ModalController, private router:Router) { }
 
   ngOnInit() {
   }
@@ -26,5 +27,9 @@ export class ProfilePage implements OnInit {
         console.log(res.data.recipe);
       }
     });
+  }
+
+  logout() {
+    this.router.navigateByUrl('/login');
   }
 }

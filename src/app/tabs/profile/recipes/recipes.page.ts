@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {Recipe} from "../../recipe.model";
+import {Router} from "@angular/router";
+import {ModalController} from "@ionic/angular";
 
 @Component({
   selector: 'app-recipes',
@@ -7,7 +10,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecipesPage implements OnInit {
 
-  constructor() { }
+  recipes:Recipe[];
+  constructor(private modalController:ModalController,private router:Router) {
+    this.recipes=[];
+  }
 
   ngOnInit() {
   }

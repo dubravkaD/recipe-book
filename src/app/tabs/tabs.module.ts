@@ -17,6 +17,9 @@ import {RecipeElementComponent} from "./recipe-element/recipe-element.component"
     TabsPageRoutingModule,
     ReactiveFormsModule
   ],
+  exports: [
+    RecipeElementComponent
+  ],
   declarations: [TabsPage, RecipeElementComponent]
 })
 export class TabsPageModule {}
