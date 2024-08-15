@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ModalController} from "@ionic/angular";
+import {RecipeModalComponent} from "./recipe-modal/recipe-modal.component";
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfilePage implements OnInit {
 
-  constructor() { }
+  constructor(private modalController:ModalController) { }
 
   ngOnInit() {
   }
 
+  addRecipe(){
+    this.modalController.create({
+      component:RecipeModalComponent,
+      componentProps: {title:'Add Recipe'}
+    }).then((modal:HTMLIonModalElement)=>{
+      modal.present();
+      return modal.onDidDismiss();
+    }).then((res) =>{
+      if(res.role==='add'){
+        console.log(res.data.recipe);
+      }
+    });
+  }
 }
