@@ -1,10 +1,15 @@
 <ion-header>
   <ion-toolbar>
-
+    <ion-buttons slot="start">
+      <ion-button routerLink="/tabs/profile">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
     <ion-title>my recipes</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <app-recipe-element *ngFor="let recipe of recipes" [recipe]="recipe" routerLink="{{recipe.id}}></app-recipe-element>
+  <!--<app-recipe-element *ngFor="let recipe of recipes" [recipe]="recipe" routerLink="{{recipe.id}}></app-recipe-element>-->
+  <app-recipe-element></app-recipe-element>
 </ion-content>

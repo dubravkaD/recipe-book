@@ -1,13 +1,32 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>my-recipe-details</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/profile/recipes"> </ion-back-button>
+    </ion-buttons>
+    <ion-title>{{recipe.title}}</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">my-recipe-details</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        {{recipe.category}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        {{recipe.ingredients}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        {{recipe.instructions}}
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>Created: {{recipe.createdAt.toDateString()}}</ion-col>
+      <ion-col>Updated: {{recipe.updatedAt.toDateString()}}</ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

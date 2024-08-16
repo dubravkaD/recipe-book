@@ -8,13 +8,15 @@ import { HomePageRoutingModule } from './home-routing.module';
 
 import { HomePage } from './home.page';
 import {RecipeElementComponent} from "../recipe-element/recipe-element.component";
+import {TabsPageModule} from "../tabs.module";
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    HomePageRoutingModule
+    HomePageRoutingModule,
+    TabsPageModule
   ],
   declarations: [HomePage]
 })

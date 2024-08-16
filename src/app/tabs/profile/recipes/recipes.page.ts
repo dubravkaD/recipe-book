@@ -12,7 +12,7 @@ export class RecipesPage implements OnInit {
 
   recipes:Recipe[];
   constructor(private modalController:ModalController,private router:Router) {
-    this.recipes=[];
+    this.recipes=[{id:'1',authorId:'',title:'',category:'',updatedAt:new Date(),createdAt:new Date(),instructions:"",ingredients:''}];
   }
 
   ngOnInit() {
